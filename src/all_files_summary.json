@@ -1,0 +1,23 @@
+{
+  "backend/main.mo": "Empty Motoko actor with no backend logic.",
+  "feature_evidence.json": "Feature evidence report mapping features to related files, components, and test IDs.",
+  "frontend-file-summaries.txt": "Contains prewritten summaries for each frontend file used in the PMO Impact Pitch app.",
+  "frontend/index.css": "Tailwind base setup defining light/dark theme color tokens and global styling rules.",
+  "frontend/index.html": "HTML entry point mounting the React app and loading the main TypeScript module.",
+  "frontend/src/App.tsx": "Main React component assembling navigation, all content sections, footer, and smooth scrolling.",
+  "frontend/src/components/ReferenceNotes.tsx": "Collapsible section displaying two reference images with a card-based layout.",
+  "frontend/src/components/SectionNav.tsx": "Sticky navigation bar with scroll tracking, smooth scrolling, and mobile menu support.",
+  "frontend/src/components/sections/AboutMeSection.tsx": "About Me section showing PMO experience, strengths, and core expertise via cards and badges.",
+  "frontend/src/components/sections/HeroExecutivePitch.tsx": "Hero section with background image, headline, stats, and scroll-triggered CTA buttons for navigating to success and about sections.",
+  "frontend/src/components/sections/ImpactSection.tsx": "Displays impact analysis with before/after cards, summary stats, and a grid generated from impact statements.",
+  "frontend/src/components/sections/Roadmap90DaySection.tsx": "Renders a 90‑day execution roadmap with phases, tasks, and core principles sourced from roadmap content.",
+  "frontend/src/components/sections/SuccessCriteriaModule.tsx": "Tabbed module showing success criteria, STAR stories, and navigation triggers to Impact and Roadmap sections.",
+  "frontend/src/content/pitchContent.ts": "Defines success criteria, stories, and supporting pitch content used across multiple sections.",
+  "frontend/src/hooks/useActor.ts": "React hook that creates and manages an authenticated or anonymous backend actor, refreshing dependent queries when identity changes.",
+  "frontend/src/hooks/useInternetIdentity.ts": "Implements a React context and provider for managing Internet Identity authentication using AuthClient, exposing identity, login, logout, and status helpers.",
+  "frontend/src/hooks/useQueries.ts": "Empty placeholder file exporting nothing because the backend has no query methods.",
+  "frontend/src/index.css": "Defines Tailwind base layers, CSS variables for light and dark themes, and global typography and layout utilities.",
+  "frontend/src/main.tsx": "Bootstraps the React app, wrapping it with React Query and Internet Identity providers.",
+  "frontend/tailwind.config.js": "Configures Tailwind with custom colors, themes, plugins, animations, and container settings using CSS variables.",
+  "project_state.json": "Stores project metadata, requirements, feature definitions, and image needs for build planning."
+}

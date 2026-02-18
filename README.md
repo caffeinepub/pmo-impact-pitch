@@ -1,2 +1,3 @@
-# pmo-impact-pitch
-Exported from Caffeine project: PMO Impact Pitch
+## PMO Impact Pitch
+
+To run app build and run docker image: `docker build -t app . docker run -it --network host app`

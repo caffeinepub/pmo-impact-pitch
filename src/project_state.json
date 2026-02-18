@@ -1,0 +1,87 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "New project",
+  "architectural_notes": [],
+  "known_issues": [],
+  "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- Abstract executive governance hero background with subtle grid/lines and warm neutral palette (hero-bg.dim_1920x1080.png)\n- Minimal line-icon set for the four success criteria (governance, data integrity, automation, lifecycle flow) in a cohesive style (success-icons.dim_512x512.png)",
+  "existing_features": [
+    {
+      "id": "feature-create-a-responsive-single-page-website-that-presents-the-candidate-s-interview-narrative-with-these-sections-1-executive-pitch-2-about-me-3-four-success-criteria-4-impact-before-vs-after-5-90-day-roadmap",
+      "title": "Create a responsive, single-page website that presents the candidate’s interview narrative with these sections: (1) Executive Pitch, (2) About Me, (3) Four Success Criteria, (4) Impact (Before vs After), (5) 90‑Day Roadmap.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-a-hero-landing-section-executive-pitch-that-shows-a-crisp-professional-pitch-statement-and-positions-the-candidate-as-a-problem-solver-with-high-impact-include-interviewer-names-sanjeev-and-martin-in-a-subtle-professional-way-e-g-tailored-for-sanjeev-martin",
+      "title": "Implement a hero/landing section (“Executive Pitch”) that shows a crisp professional pitch statement and positions the candidate as a problem solver with high impact; include interviewer names (“Sanjeev” and “Martin”) in a subtle, professional way (e.g., “Tailored for Sanjeev & Martin”).",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-an-about-me-section-page-that-summarizes-the-candidate-s-7-years-pmo-tenure-and-explicitly-aligns-to-the-stated-success-criteria-transparent-reliable-data-governance-process-adherence-reduced-bottlenecks-improved-reporting-automation",
+      "title": "Add an “About Me” section/page that summarizes the candidate’s 7 years PMO tenure and explicitly aligns to the stated success criteria: transparent & reliable data, governance/process adherence, reduced bottlenecks, improved reporting/automation.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-an-interactive-success-criteria-module-with-6-buttons-tabs-four-success-criteria-buttons-a-5th-button-labeled-impact-and-a-6th-button-labeled-90-day-roadmap-plan-each-of-the-four-success-criteria-buttons-must-expand-to-show-exactly-3-detailed-stories-in-star-format-based-on-the-user-provided-achievements",
+      "title": "Create an interactive “Success Criteria” module with 6 buttons/tabs: four success criteria buttons, a 5th button labeled “Impact”, and a 6th button labeled “90‑Day Roadmap Plan”. Each of the four success criteria buttons must expand to show exactly 3 detailed stories in STAR format based on the user-provided achievements.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-the-impact-view-to-show-before-after-results-statements-summarizing-the-12-activities-in-a-systematic-highly-visual-way-e-g-two-column-before-vs-after-cards",
+      "title": "Implement the “Impact” view to show before/after results statements summarizing the 12 activities in a systematic, highly visual way (e.g., two-column “Before vs After” cards).",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-the-90-day-roadmap-plan-view-that-clearly-breaks-down-days-1-30-31-60-61-90-with-concrete-pmo-relevant-actions-focused-on-lifecycle-integrity-governance-control-points-automation-validation-dashboards-and-enablement-training",
+      "title": "Implement the “90‑Day Roadmap Plan” view that clearly breaks down Days 1–30, 31–60, 61–90 with concrete, PMO-relevant actions focused on lifecycle integrity, governance control points, automation/validation, dashboards, and enablement/training.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-use-the-two-uploaded-images-as-reference-material-and-include-them-on-the-website-in-a-dedicated-reference-notes-collapsible-section-or-modal-without-extracting-or-claiming-personal-identity-details-the-section-should-be-optional-to-view-and-not-dominate-the-primary-narrative",
+      "title": "Use the two uploaded images as reference material and include them on the website in a dedicated “Reference”/“Notes” collapsible section (or modal) without extracting or claiming personal identity details; the section should be optional to view and not dominate the primary narrative.",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-establish-a-coherent-visually-appealing-design-theme-colors-typography-spacing-and-component-style-that-communicates-executive-governance-operational-excellence-do-not-use-a-blue-purple-palette-by-default",
+      "title": "Establish a coherent, visually appealing design theme (colors, typography, spacing, and component style) that communicates “executive governance / operational excellence”. Do not use a blue+purple palette by default.",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Create a website (purpose/content/pages not yet specified)",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "PMO Impact Pitch",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}
