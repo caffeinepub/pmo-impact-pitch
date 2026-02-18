@@ -1,184 +1,58 @@
 {
   "kind": "build_request",
-  "title": "Create an interactive interview-pitch website from provided PMO achievements",
+  "title": "Add hover/selected states for Success Criteria tabs and ensure Impact vs 90-Day Plan are distinct",
   "projectName": "PMO Impact Pitch",
   "priority": "normal",
   "requirements": [
     {
-      "id": "REQ-1",
-      "text": "Create a responsive, single-page website that presents the candidate’s interview narrative with these sections: (1) Executive Pitch, (2) About Me, (3) Four Success Criteria, (4) Impact (Before vs After), (5) 90‑Day Roadmap.",
+      "id": "REQ-20",
+      "text": "Add clear hover, focus, and selected (active) visual states for all tab buttons in the Success Criteria module (the four success criteria tabs plus the “Impact” and “90-Day Plan” buttons), so users can visually tell what is interactive, what is hovered, and what is selected.",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-3"
+          "msg-6"
         ],
         "quotes": [
-          "now i want to present this to the interviwer... total 6 slides.",
-          "Now there should be four buttons with four success lines... 5 th button... impact... 6 th butto 90 day roadmap plan",
-          "create a website"
+          "when hovered should react or respond like colour change or selected colour."
         ]
       },
       "acceptanceCriteria": [
-        "Landing view includes clearly labeled navigation to: Executive Pitch, About Me, Success Criteria, Impact, 90‑Day Roadmap.",
-        "Layout is usable on mobile, tablet, and desktop (no horizontal scrolling; typography scales appropriately).",
-        "All user-facing text is in English."
+        "On desktop, hovering any tab button (including Impact and 90-Day Plan) visibly changes its styling (e.g., background, border, or text color) without causing layout shift.",
+        "Using keyboard navigation (Tab + arrow keys/Enter/Space as applicable), the focused tab button has a visible focus indicator.",
+        "The currently selected success-criteria tab has a clearly distinct selected styling that is different from the hover styling.",
+        "Hover/focus/selected styles work in both light and dark modes."
       ]
     },
     {
-      "id": "REQ-2",
-      "text": "Implement a hero/landing section (“Executive Pitch”) that shows a crisp professional pitch statement and positions the candidate as a problem solver with high impact; include interviewer names (“Sanjeev” and “Martin”) in a subtle, professional way (e.g., “Tailored for Sanjeev & Martin”).",
+      "id": "REQ-21",
+      "text": "Ensure the “Impact” and “90-Day Plan” controls in the Success Criteria module are clearly separated as two distinct buttons (not visually merged/overwritten) and that each triggers only its respective scroll target (Impact scrolls to the Impact section; 90-Day Plan scrolls to the Roadmap section).",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-2",
-          "msg-3"
+          "msg-6"
         ],
         "quotes": [
-          "first slide should a pitch professional up to the mark accurate crisp hitting the correct keywords and liking as per the interviwer.",
-          "Sanjeev and martin are interviwer."
+          "Impact\n\n90-Day Plan make these 2 separate."
         ]
       },
       "acceptanceCriteria": [
-        "Hero section contains one concise pitch paragraph and a clear call-to-action (e.g., “Explore impact”).",
-        "Hero section includes “Sanjeev” and “Martin” text somewhere on the page without claiming any personal details about them.",
-        "The pitch reads as a PMO/portfolio-governance profile (governance, lifecycle integrity, automation, cross-region alignment)."
-      ]
-    },
-    {
-      "id": "REQ-3",
-      "text": "Add an “About Me” section/page that summarizes the candidate’s 7 years PMO tenure and explicitly aligns to the stated success criteria: transparent & reliable data, governance/process adherence, reduced bottlenecks, improved reporting/automation.",
-      "target": "frontend",
-      "source": {
-        "messageIds": [
-          "msg-2"
-        ],
-        "quotes": [
-          "There should be one page detailing about me exactly position me as how they want what they want is as per atatached."
-        ]
-      },
-      "acceptanceCriteria": [
-        "About Me section includes: years of experience, core strengths, and a short alignment list referencing the four success criteria.",
-        "Content is scannable (headline + bullet points) and visually distinct from other sections."
-      ]
-    },
-    {
-      "id": "REQ-4",
-      "text": "Create an interactive “Success Criteria” module with 6 buttons/tabs: four success criteria buttons, a 5th button labeled “Impact”, and a 6th button labeled “90‑Day Roadmap Plan”. Each of the four success criteria buttons must expand to show exactly 3 detailed stories in STAR format based on the user-provided achievements.",
-      "target": "frontend",
-      "source": {
-        "messageIds": [
-          "msg-2"
-        ],
-        "quotes": [
-          "Now there should be four buttons with four success lines every button should explain all three activities i mentioned in detailed in STAR format then there should be 5 th button with name impact... then there should be 6 th butto 90 day roadmap plan"
-        ]
-      },
-      "acceptanceCriteria": [
-        "UI shows 6 clearly clickable buttons/tabs; the selected one is visually highlighted.",
-        "Each of the four success criteria reveals 3 STAR blocks with headings: Situation, Task, Action, Result.",
-        "STAR content matches the user-provided initiatives (demand review globalization, PM training/KT assets, ServiceNow ITAM inventory; resource-first policy, extension governance, compliance improvement; MS Planner visibility, weekly patch cadence, onboarding manuals; PM availability dashboard, resource dashboard, resource-plan automation).",
-        "Only one section is expanded/visible at a time (unless explicitly designed as an accordion with clear separation)."
-      ]
-    },
-    {
-      "id": "REQ-5",
-      "text": "Implement the “Impact” view to show before/after results statements summarizing the 12 activities in a systematic, highly visual way (e.g., two-column “Before vs After” cards).",
-      "target": "frontend",
-      "source": {
-        "messageIds": [
-          "msg-2"
-        ],
-        "quotes": [
-          "5 th button with name impact which will only show the impact or the before after results statements of 12 activities systematically"
-        ]
-      },
-      "acceptanceCriteria": [
-        "Impact view includes at least 12 concise before/after statements derived from the described work (silos→global transparency; Excel→ServiceNow ITAM; 77%→100% compliance; week-late VP updates→real-time; quarterly→weekly patching; etc.).",
-        "Impact is presented in a way that is understandable even when skimming (cards, badges, or metrics-style layout)."
-      ]
-    },
-    {
-      "id": "REQ-6",
-      "text": "Implement the “90‑Day Roadmap Plan” view that clearly breaks down Days 1–30, 31–60, 61–90 with concrete, PMO-relevant actions focused on lifecycle integrity, governance control points, automation/validation, dashboards, and enablement/training.",
-      "target": "frontend",
-      "source": {
-        "messageIds": [
-          "msg-2"
-        ],
-        "quotes": [
-          "last slide should be what i will do as my roadmap once i join...",
-          "90 day roadmap plan which will showcase my 90 days plan"
-        ]
-      },
-      "acceptanceCriteria": [
-        "Roadmap view shows three time blocks (1–30, 31–60, 61–90) with bullet points.",
-        "Roadmap language emphasizes scalable, repeatable systems and governance/data integrity (matching the interview positioning requested)."
-      ]
-    },
-    {
-      "id": "REQ-7",
-      "text": "Use the two uploaded images as reference material and include them on the website in a dedicated “Reference”/“Notes” collapsible section (or modal) without extracting or claiming personal identity details; the section should be optional to view and not dominate the primary narrative.",
-      "target": "frontend",
-      "source": {
-        "messageIds": [
-          "msg-1"
-        ],
-        "quotes": [
-          "The user has uploaded 2 image(s): image.png, image.png."
-        ]
-      },
-      "acceptanceCriteria": [
-        "A collapsible panel or modal can display the uploaded images.",
-        "No text on the site identifies or asserts who is in the images; the images are presented as generic reference notes only."
-      ]
-    },
-    {
-      "id": "REQ-8",
-      "text": "Establish a coherent, visually appealing design theme (colors, typography, spacing, and component style) that communicates “executive governance / operational excellence”. Do not use a blue+purple palette by default.",
-      "target": "frontend",
-      "source": {
-        "messageIds": [
-          "msg-2"
-        ],
-        "quotes": [
-          "keep it visually appealing even before reading the reader should get to know the impact. keep the reader hooked with visuals."
-        ]
-      },
-      "acceptanceCriteria": [
-        "Theme is consistent across hero, buttons/tabs, cards, and typography.",
-        "Color palette is not blue+purple as the primary combination (unless the user later requests it).",
-        "Design remains professional and readable (sufficient contrast; clear hierarchy)."
+        "“Impact” and “90-Day Plan” render as two distinct tab/button elements with readable labels at all common viewport sizes (mobile through desktop).",
+        "Clicking/tapping “Impact” scrolls to the section with id=\"impact\" and does not scroll to the roadmap section.",
+        "Clicking/tapping “90-Day Plan” scrolls to the section with id=\"roadmap\" and does not scroll to the impact section.",
+        "No label text overlap/overwriting occurs between these two controls at any viewport size."
       ]
     }
   ],
   "constraints": [
-    "Backend must remain a single Motoko actor (no additional backend services).",
-    "Do not edit files under frontend/src/components/ui or other immutable paths listed in SYSTEM_CONTEXT; compose existing UI components instead.",
-    "Do not add third-party authentication providers; only Internet Identity is allowed if authentication is later needed."
+    "Do not modify any files under frontend/src/components/ui (shadcn UI components); compose/override styles from consuming components instead.",
+    "Keep all user-facing text in English."
   ],
   "nonGoals": [
-    "Building a full CMS or admin panel for editing content.",
-    "Integrating external services (ServiceNow, Microsoft Planner, email triggers) beyond static storytelling content.",
-    "Real-time features (websockets/chat) or push notifications.",
-    "Automatically generating a downloadable PowerPoint file (the deliverable is a website)."
+    "Do not add new sections or change the content of the Impact or 90-Day Roadmap sections beyond what is needed for correct navigation/interaction.",
+    "Do not introduce new backend functionality; this is a frontend-only fix."
   ],
   "imageRequirements": {
-    "required": [
-      "Abstract executive governance hero background with subtle grid/lines and warm neutral palette (hero-bg.dim_1920x1080.png)",
-      "Minimal line-icon set for the four success criteria (governance, data integrity, automation, lifecycle flow) in a cohesive style (success-icons.dim_512x512.png)"
-    ],
+    "required": [],
     "edits": []
-  },
-  "userProfileUpdate": {
-    "goalsToAdd": [],
-    "goalsToRemove": [],
-    "preferencesToAdd": [
-      "Use English for user-facing copy."
-    ],
-    "preferencesToRemove": [],
-    "miscToAdd": [],
-    "miscToRemove": [],
-    "fieldsToSet": {},
-    "fieldsToDelete": []
   }
 }

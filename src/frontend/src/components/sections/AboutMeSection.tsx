@@ -27,16 +27,16 @@ export default function AboutMeSection() {
   ];
 
   return (
-    <section id="about" className="py-20 bg-muted/30">
+    <section id="about" className="py-12 sm:py-16 md:py-20 bg-muted/30">
       <div className="container mx-auto px-4">
-        <div className="max-w-5xl mx-auto space-y-12">
+        <div className="max-w-5xl mx-auto space-y-8 sm:space-y-12">
           {/* Header */}
-          <div className="text-center space-y-4">
-            <Badge variant="outline" className="text-sm">About Me</Badge>
-            <h2 className="text-3xl sm:text-4xl font-bold">
+          <div className="text-center space-y-3 sm:space-y-4">
+            <Badge variant="outline" className="text-xs sm:text-sm">About Me</Badge>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold px-4">
               7 Years Building PMO Excellence
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
               Specializing in scalable governance models, global workflows, cross-region alignment, 
               and high-integrity data structures that reduce friction and increase predictability.
             </p>
@@ -45,44 +45,44 @@ export default function AboutMeSection() {
           {/* Core Profile */}
           <Card className="border-2">
             <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <CheckCircle2 className="w-5 h-5 text-amber-600" />
-                Core Expertise
+              <CardTitle className="flex items-center gap-2 text-base sm:text-lg flex-wrap">
+                <CheckCircle2 className="w-5 h-5 text-blue-700 dark:text-blue-400 flex-shrink-0" />
+                <span>Core Expertise</span>
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
                 I design systems that reduce friction, increase predictability, and allow leaders to make 
                 decisions on reliable foundations rather than firefighting signals. My approach focuses on 
                 building structural mechanisms that prevent recurrence, not patches.
               </p>
               <div className="flex flex-wrap gap-2">
-                <Badge variant="secondary">Lifecycle Integrity</Badge>
-                <Badge variant="secondary">Cross-Regional Alignment</Badge>
-                <Badge variant="secondary">Data Governance</Badge>
-                <Badge variant="secondary">Process Automation</Badge>
-                <Badge variant="secondary">Dashboard Engineering</Badge>
-                <Badge variant="secondary">Compliance Management</Badge>
+                <Badge variant="secondary" className="text-xs">Lifecycle Integrity</Badge>
+                <Badge variant="secondary" className="text-xs">Cross-Regional Alignment</Badge>
+                <Badge variant="secondary" className="text-xs">Data Governance</Badge>
+                <Badge variant="secondary" className="text-xs">Process Automation</Badge>
+                <Badge variant="secondary" className="text-xs">Dashboard Engineering</Badge>
+                <Badge variant="secondary" className="text-xs">Compliance Management</Badge>
               </div>
             </CardContent>
           </Card>
 
           {/* Success Criteria Alignment */}
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid sm:grid-cols-2 gap-4 sm:gap-6">
             {strengths.map((strength, index) => {
               const Icon = strength.icon;
               return (
                 <Card key={index} className="hover:shadow-lg transition-shadow">
                   <CardHeader>
-                    <CardTitle className="flex items-center gap-3 text-lg">
-                      <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center">
+                    <CardTitle className="flex items-start gap-3 text-base sm:text-lg">
+                      <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-blue-600 to-blue-800 flex items-center justify-center flex-shrink-0">
                         <Icon className="w-5 h-5 text-white" />
                       </div>
-                      {strength.title}
+                      <span className="min-w-0">{strength.title}</span>
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-sm text-muted-foreground leading-relaxed">
+                    <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
                       {strength.description}
                     </p>
                   </CardContent>

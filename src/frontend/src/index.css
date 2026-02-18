@@ -6,89 +6,140 @@
     :root {
         --radius: 0.625rem;
         
-        /* Warm neutral palette with amber/orange accents */
-        --background: 0.98 0.005 60;
-        --foreground: 0.20 0.015 60;
+        /* Professional blue-slate palette */
+        --background: 0.99 0.003 240;
+        --foreground: 0.20 0.020 240;
         
         --card: 1 0 0;
-        --card-foreground: 0.20 0.015 60;
+        --card-foreground: 0.20 0.020 240;
         
         --popover: 1 0 0;
-        --popover-foreground: 0.20 0.015 60;
+        --popover-foreground: 0.20 0.020 240;
         
-        --primary: 0.65 0.18 45;
-        --primary-foreground: 0.98 0.005 60;
+        --primary: 0.55 0.15 240;
+        --primary-foreground: 0.99 0.003 240;
         
-        --secondary: 0.95 0.01 60;
-        --secondary-foreground: 0.25 0.015 60;
+        --secondary: 0.96 0.008 240;
+        --secondary-foreground: 0.25 0.020 240;
         
-        --muted: 0.96 0.008 60;
-        --muted-foreground: 0.50 0.012 60;
+        --muted: 0.97 0.005 240;
+        --muted-foreground: 0.50 0.015 240;
         
-        --accent: 0.94 0.012 50;
-        --accent-foreground: 0.25 0.015 60;
+        --accent: 0.95 0.010 240;
+        --accent-foreground: 0.25 0.020 240;
         
         --destructive: 0.577 0.245 27.325;
         --destructive-foreground: 0.985 0 0;
         
-        --border: 0.90 0.008 60;
-        --input: 0.90 0.008 60;
-        --ring: 0.65 0.18 45;
+        --border: 0.92 0.008 240;
+        --input: 0.92 0.008 240;
+        --ring: 0.55 0.15 240;
         
-        --chart-1: 0.65 0.18 45;
-        --chart-2: 0.70 0.15 35;
-        --chart-3: 0.60 0.20 55;
-        --chart-4: 0.75 0.12 25;
-        --chart-5: 0.55 0.22 65;
+        --chart-1: 0.55 0.15 240;
+        --chart-2: 0.60 0.12 220;
+        --chart-3: 0.50 0.18 260;
+        --chart-4: 0.65 0.10 200;
+        --chart-5: 0.45 0.20 280;
     }
 
     .dark {
-        --background: 0.15 0.015 60;
-        --foreground: 0.95 0.008 60;
+        --background: 0.15 0.020 240;
+        --foreground: 0.96 0.008 240;
         
-        --card: 0.18 0.015 60;
-        --card-foreground: 0.95 0.008 60;
+        --card: 0.18 0.020 240;
+        --card-foreground: 0.96 0.008 240;
         
-        --popover: 0.20 0.015 60;
-        --popover-foreground: 0.95 0.008 60;
+        --popover: 0.20 0.020 240;
+        --popover-foreground: 0.96 0.008 240;
         
-        --primary: 0.70 0.18 45;
-        --primary-foreground: 0.15 0.015 60;
+        --primary: 0.65 0.15 240;
+        --primary-foreground: 0.15 0.020 240;
         
-        --secondary: 0.25 0.015 60;
-        --secondary-foreground: 0.95 0.008 60;
+        --secondary: 0.25 0.020 240;
+        --secondary-foreground: 0.96 0.008 240;
         
-        --muted: 0.25 0.015 60;
-        --muted-foreground: 0.60 0.012 60;
+        --muted: 0.25 0.020 240;
+        --muted-foreground: 0.60 0.015 240;
         
-        --accent: 0.30 0.018 50;
-        --accent-foreground: 0.95 0.008 60;
+        --accent: 0.30 0.025 240;
+        --accent-foreground: 0.96 0.008 240;
         
         --destructive: 0.704 0.191 22.216;
-        --destructive-foreground: 0.15 0.015 60;
+        --destructive-foreground: 0.15 0.020 240;
         
-        --border: 0.30 0.015 60;
-        --input: 0.30 0.015 60;
-        --ring: 0.65 0.18 45;
+        --border: 0.30 0.020 240;
+        --input: 0.30 0.020 240;
+        --ring: 0.65 0.15 240;
         
-        --chart-1: 0.65 0.18 45;
-        --chart-2: 0.70 0.15 35;
-        --chart-3: 0.60 0.20 55;
-        --chart-4: 0.75 0.12 25;
-        --chart-5: 0.55 0.22 65;
+        --chart-1: 0.65 0.15 240;
+        --chart-2: 0.70 0.12 220;
+        --chart-3: 0.60 0.18 260;
+        --chart-4: 0.75 0.10 200;
+        --chart-5: 0.55 0.20 280;
     }
 
     * {
         @apply border-border;
     }
     
+    html {
+        overflow-x: hidden;
+        scroll-padding-top: 5rem;
+    }
+    
     body {
         @apply bg-background text-foreground;
         font-feature-settings: "rlig" 1, "calt" 1;
+        overflow-x: hidden;
     }
     
     h1, h2, h3, h4, h5, h6 {
         @apply font-bold tracking-tight;
+    }
+}
+
+@layer components {
+    /* Success Criteria tab interaction states */
+    .success-tab-trigger {
+        @apply border-2 border-border rounded-lg bg-background;
+        @apply transition-all duration-200;
+    }
+    
+    .success-tab-trigger:hover {
+        @apply bg-accent border-primary/30;
+    }
+    
+    .success-tab-trigger:focus-visible {
+        @apply outline-none ring-2 ring-ring ring-offset-2 ring-offset-background;
+    }
+    
+    .success-tab-trigger[data-state="active"] {
+        @apply bg-gradient-to-r from-blue-600 to-blue-800 text-white border-blue-800;
+    }
+    
+    .success-tab-trigger[data-state="active"]:hover {
+        @apply from-blue-700 to-blue-900 border-blue-900;
+    }
+    
+    /* Success Criteria navigation button interaction states */
+    .success-nav-button {
+        @apply border-2 transition-all duration-200;
+    }
+    
+    .success-nav-button:hover {
+        @apply bg-gradient-to-r from-blue-50 to-blue-100 border-blue-300;
+    }
+    
+    .dark .success-nav-button:hover {
+        @apply from-blue-950 to-blue-900 border-blue-700;
+    }
+    
+    .success-nav-button:focus-visible {
+        @apply outline-none ring-2 ring-ring ring-offset-2 ring-offset-background;
+    }
+    
+    .success-nav-button:active {
+        @apply scale-[0.98];
     }
 }
 

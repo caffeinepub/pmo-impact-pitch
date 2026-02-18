@@ -1,69 +1,40 @@
 {
   "kind": "spec_vs_diff_report",
   "version": "1.0",
-  "generatedAt": "2026-02-18T08:01:48.472Z",
-  "summary": "Most frontend narrative sections (Hero/Executive Pitch, About Me, Success Criteria, Impact, 90‑Day Roadmap) and navigation are implemented with a warm amber/orange theme and a collapsible Reference Notes section. However, the Success Criteria module’s required Impact and 90‑Day Roadmap tabs do not appear to expand/show their own content within the module (they scroll instead), and the required success-icons image asset is not evidenced as included/used in the UI.",
+  "generatedAt": "2026-02-18T10:12:10.282Z",
+  "summary": "REQ-21 appears implemented via two separate outline Buttons that scroll to distinct section IDs. REQ-20 is partially implemented: Success Criteria tab triggers have hover/focus/active styles, and Impact/90-Day buttons have hover/focus styles, but a clearly distinct persistent selected/active state for the Impact/90-Day controls is not evidenced.",
   "missing_requirements": [
     {
-      "id": "REQ-4",
-      "requirement": "Success Criteria module must have 6 buttons/tabs where the 5th (Impact) and 6th (90‑Day Roadmap Plan) expand/show their views as part of the interactive module (one visible at a time).",
-      "reason": "The module renders TabsTriggers for Impact and 90-Day Plan, but they only call scroll handlers to jump to separate page sections; no TabsContent for these tabs is evidenced in the diff snippet, and Impact/Roadmap are implemented as separate sections outside the module (also imported but not evidenced as rendered inside the tab content).",
+      "id": "REQ-20",
+      "requirement": "Add clear hover, focus, and selected (active) visual states for all tab buttons in the Success Criteria module (including the “Impact” and “90-Day Plan” buttons), with selected styling distinct from hover, working in light and dark modes.",
+      "reason": "The four Success Criteria TabsTriggers have hover/focus-visible and a selected state via `[data-state=\"active\"]`, but the separate “Impact” and “90-Day Plan” controls are implemented as plain Buttons with hover/focus-visible styling only; no persistent selected/active styling (distinct from hover) is shown for those controls.",
       "evidence": [
         "frontend/src/components/sections/SuccessCriteriaModule.tsx",
-        "frontend/src/App.tsx"
-      ]
-    },
-    {
-      "id": "REQ-8",
-      "requirement": "Use the minimal line-icon set image for the four success criteria (success-icons.dim_512x512.png) in a cohesive style.",
-      "reason": "The diff shows the hero background image being used, but there is no evidence of the required success-icons image being added or referenced anywhere in the rendered UI; success criteria icons appear to be emojis (e.g., '📊', '🛡️') in content.",
-      "evidence": [
-        "frontend/src/components/sections/HeroExecutivePitch.tsx",
-        "frontend/src/content/pitchContent.ts"
+        "frontend/src/index.css"
       ]
     }
   ],
   "hallucinated_features": [
     {
-      "description": "Internet Identity authentication plumbing (provider + hooks) and actor management via react-query.",
-      "reason": "The BuildRequest explicitly says authentication is only needed if later required; no requirement asks to add authentication now. The diff adds InternetIdentityProvider, useInternetIdentity, and useActor despite backend having no methods.",
+      "description": "Global theme/palette changes (professional blue-slate OKLCH palette) beyond adding tab/button interaction states.",
+      "reason": "The BuildRequest focuses on hover/focus/selected states and distinct Impact vs 90-Day controls; the diff shows extensive changes to CSS variables for colors/backgrounds/cards/charts, which is broader than requested UI interaction styling.",
       "evidence": [
-        "frontend/src/main.tsx",
-        "frontend/src/hooks/useInternetIdentity.ts",
-        "frontend/src/hooks/useActor.ts",
-        "frontend/src/hooks/useQueries.ts"
+        "frontend/src/index.css"
       ]
     },
     {
-      "description": "Toast/notification system (sonner Toaster).",
-      "reason": "No requirement requests toast notifications; the app includes a Toaster component.",
+      "description": "Addition of a new “Reviews” section and related navigation/content references.",
+      "reason": "Non-goals explicitly state not to add new sections; the diff includes updates in a project summary file claiming a new Reviews section/component and navigation support.",
       "evidence": [
-        "frontend/src/App.tsx"
+        "frontend-file-summaries.txt"
       ]
     }
   ],
-  "confidence": 0.68,
+  "confidence": 0.74,
   "changed_files": [
-    "all_files_summary.json",
-    "backend/main.mo",
     "frontend-file-summaries.txt",
-    "frontend/index.css",
-    "frontend/index.html",
-    "frontend/src/App.tsx",
-    "frontend/src/components/ReferenceNotes.tsx",
-    "frontend/src/components/SectionNav.tsx",
-    "frontend/src/components/sections/AboutMeSection.tsx",
-    "frontend/src/components/sections/HeroExecutivePitch.tsx",
-    "frontend/src/components/sections/ImpactSection.tsx",
-    "frontend/src/components/sections/Roadmap90DaySection.tsx",
     "frontend/src/components/sections/SuccessCriteriaModule.tsx",
-    "frontend/src/content/pitchContent.ts",
-    "frontend/src/hooks/useActor.ts",
-    "frontend/src/hooks/useInternetIdentity.ts",
-    "frontend/src/hooks/useQueries.ts",
     "frontend/src/index.css",
-    "frontend/src/main.tsx",
-    "frontend/tailwind.config.js",
     "project_state.json"
   ]
 }

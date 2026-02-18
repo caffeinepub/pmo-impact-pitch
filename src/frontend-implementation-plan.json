@@ -1,215 +1,44 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "PMO Impact Pitch — Single-page interactive interview narrative",
+  "title": "Success Criteria tabs: improved interaction states + distinct Impact/90-Day controls",
   "requirements": [
     {
-      "id": "REQ-1",
-      "summary": "Build a responsive single-page narrative with clearly labeled navigation to all required sections.",
+      "id": "REQ-20",
+      "summary": "Add clear hover, focus, and selected visual states for Success Criteria tab buttons (including Impact and 90-Day Plan) in light/dark mode without layout shift.",
       "acceptanceCriteria": [
-        "Landing view includes clearly labeled navigation to: Executive Pitch, About Me, Success Criteria, Impact, 90‑Day Roadmap.",
-        "Layout is usable on mobile, tablet, and desktop (no horizontal scrolling; typography scales appropriately).",
-        "All user-facing text is in English."
+        "On desktop, hovering any tab button (including Impact and 90-Day Plan) visibly changes its styling (e.g., background, border, or text color) without causing layout shift.",
+        "Using keyboard navigation (Tab + arrow keys/Enter/Space as applicable), the focused tab button has a visible focus indicator.",
+        "The currently selected success-criteria tab has a clearly distinct selected styling that is different from the hover styling.",
+        "Hover/focus/selected styles work in both light and dark modes."
       ],
       "file_operations": [
-        {
-          "path": "frontend/src/App.tsx",
-          "operation": "create",
-          "description": "Create the single-page layout and wire all required sections in-order (Executive Pitch, About Me, Success Criteria, Impact, 90‑Day Roadmap) with in-page navigation/scroll targeting and a responsive container."
-        },
-        {
-          "path": "frontend/src/components/SectionNav.tsx",
-          "operation": "create",
-          "description": "Add a sticky/top navigation component with labeled links that scroll to each section. Use shadcn/ui primitives (e.g., Button) to keep consistent styling. Verify the component's usage instructions before implementing."
-        },
-        {
-          "path": "frontend/src/components/layout/SectionShell.tsx",
-          "operation": "create",
-          "description": "Create a reusable section wrapper (title, subtitle, spacing, anchor id) to ensure consistent spacing/typographic hierarchy across the single page."
-        }
-      ]
-    },
-    {
-      "id": "REQ-2",
-      "summary": "Implement the Executive Pitch hero section with a crisp PMO/portfolio-governance pitch and a clear call-to-action, subtly tailored for Sanjeev & Martin.",
-      "acceptanceCriteria": [
-        "Hero section contains one concise pitch paragraph and a clear call-to-action (e.g., “Explore impact”).",
-        "Hero section includes “Sanjeev” and “Martin” text somewhere on the page without claiming any personal details about them.",
-        "The pitch reads as a PMO/portfolio-governance profile (governance, lifecycle integrity, automation, cross-region alignment)."
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/components/sections/HeroExecutivePitch.tsx",
-          "operation": "create",
-          "description": "Create the hero section with a professional headline, one concise pitch paragraph, a subtle line like “Tailored for Sanjeev & Martin”, and a CTA that scrolls to the next key section. Use shadcn/ui Button and Card where appropriate. Verify the component's usage instructions before implementing."
-        },
-        {
-          "path": "frontend/public/assets/generated/hero-bg.dim_1920x1080.png",
-          "operation": "create",
-          "description": "Add the generated hero background image asset and reference it from the hero section as a decorative background (no identity claims)."
-        },
-        {
-          "path": "frontend/src/App.tsx",
-          "operation": "modify",
-          "description": "Wire HeroExecutivePitch into the top of the single page and connect the CTA to scroll to a later section (e.g., Success Criteria or Impact)."
-        }
-      ]
-    },
-    {
-      "id": "REQ-3",
-      "summary": "Add an About Me section summarizing 7 years PMO experience and explicit alignment to the four success criteria.",
-      "acceptanceCriteria": [
-        "About Me section includes: years of experience, core strengths, and a short alignment list referencing the four success criteria.",
-        "Content is scannable (headline + bullet points) and visually distinct from other sections."
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/components/sections/AboutMeSection.tsx",
-          "operation": "create",
-          "description": "Implement the About Me section with a headline, short summary, and bullet list aligning explicitly to: transparent & reliable data, governance/process adherence, reduced bottlenecks, improved reporting/automation. Use shadcn/ui Card for scannability. Verify the component's usage instructions before implementing."
-        },
-        {
-          "path": "frontend/src/App.tsx",
-          "operation": "modify",
-          "description": "Wire AboutMeSection into the single-page flow with a stable anchor id used by the navigation."
-        }
-      ]
-    },
-    {
-      "id": "REQ-4",
-      "summary": "Create an interactive Success Criteria module with 6 tabs/buttons, showing 3 STAR stories for each of the four success criteria, plus Impact and 90‑Day Roadmap Plan tabs.",
-      "acceptanceCriteria": [
-        "UI shows 6 clearly clickable buttons/tabs; the selected one is visually highlighted.",
-        "Each of the four success criteria reveals 3 STAR blocks with headings: Situation, Task, Action, Result.",
-        "STAR content matches the user-provided initiatives (demand review globalization, PM training/KT assets, ServiceNow ITAM inventory; resource-first policy, extension governance, compliance improvement; MS Planner visibility, weekly patch cadence, onboarding manuals; PM availability dashboard, resource dashboard, resource-plan automation).",
-        "Only one section is expanded/visible at a time (unless explicitly designed as an accordion with clear separation)."
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/content/pitchContent.ts",
-          "operation": "create",
-          "description": "Add structured English copy for: four success criteria labels and their 3 STAR stories each, plus short summaries for the Impact and 90‑Day Roadmap tabs, keeping content consistent across sections."
-        },
         {
           "path": "frontend/src/components/sections/SuccessCriteriaModule.tsx",
-          "operation": "create",
-          "description": "Implement the 6-tab Success Criteria module using shadcn/ui Tabs (or equivalent shadcn/ui toggle primitives) to ensure only one panel is visible at a time, and render STAR blocks with explicit Situation/Task/Action/Result headings. Verify the component's usage instructions before implementing."
-        },
-        {
-          "path": "frontend/public/assets/generated/success-icons.dim_512x512.png",
-          "operation": "create",
-          "description": "Add the generated minimal icon set asset and use it in the Success Criteria module to visually differentiate the four criteria (no extra icon generation beyond the provided file)."
-        },
-        {
-          "path": "frontend/src/App.tsx",
           "operation": "modify",
-          "description": "Wire SuccessCriteriaModule into the page and ensure the navigation link scrolls to it."
-        }
-      ]
-    },
-    {
-      "id": "REQ-5",
-      "summary": "Implement the Impact view with at least 12 skimmable before/after statements presented visually (e.g., cards).",
-      "acceptanceCriteria": [
-        "Impact view includes at least 12 concise before/after statements derived from the described work (silos→global transparency; Excel→ServiceNow ITAM; 77%→100% compliance; week-late VP updates→real-time; quarterly→weekly patching; etc.).",
-        "Impact is presented in a way that is understandable even when skimming (cards, badges, or metrics-style layout)."
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/components/sections/ImpactSection.tsx",
-          "operation": "create",
-          "description": "Create the Impact section rendering at least 12 before/after statements in a two-column card layout (Before vs After) optimized for skimming. Use shadcn/ui Card and Badge components for visual hierarchy. Verify the component's usage instructions before implementing."
+          "description": "Update the shadcn-ui Tabs/TabsTrigger consuming styles (do not edit any files under frontend/src/components/ui) to add explicit hover, focus-visible, and data-[state=active] selected styles for all tab-like controls (the four criteria triggers plus the Impact and 90-Day Plan triggers). Keep border width consistent (e.g., always border-2) and use transitions that avoid any layout shift. Verify the component's usage instructions before implementing."
         },
-        {
-          "path": "frontend/src/content/pitchContent.ts",
-          "operation": "modify",
-          "description": "Add/ensure at least 12 before/after statements derived from the 12 activities (e.g., silos→global transparency; Excel→ServiceNow ITAM; 77%→100% compliance; week-late VP updates→near real-time; quarterly→weekly patching; etc.)."
-        },
-        {
-          "path": "frontend/src/App.tsx",
-          "operation": "modify",
-          "description": "Wire ImpactSection into the page and ensure navigation scrolls to it; optionally connect the Hero CTA or Success Criteria 'Impact' tab action to scroll here."
-        }
-      ]
-    },
-    {
-      "id": "REQ-6",
-      "summary": "Implement the 90‑Day Roadmap Plan view broken into Days 1–30, 31–60, 61–90 with concrete PMO actions focused on governance, lifecycle integrity, automation, dashboards, and enablement.",
-      "acceptanceCriteria": [
-        "Roadmap view shows three time blocks (1–30, 31–60, 61–90) with bullet points.",
-        "Roadmap language emphasizes scalable, repeatable systems and governance/data integrity (matching the interview positioning requested)."
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/components/sections/Roadmap90DaySection.tsx",
-          "operation": "create",
-          "description": "Create the Roadmap section with three clearly labeled blocks (Days 1–30, 31–60, 61–90) and PMO-relevant bullet points emphasizing lifecycle integrity, governance control points, automation/validation, dashboards, and enablement/training. Use shadcn/ui Card/Accordion for readability. Verify the component's usage instructions before implementing."
-        },
-        {
-          "path": "frontend/src/content/pitchContent.ts",
-          "operation": "modify",
-          "description": "Add concrete 1–30 / 31–60 / 61–90 bullet content in English, aligned with the requested governance and scalable systems emphasis."
-        },
-        {
-          "path": "frontend/src/App.tsx",
-          "operation": "modify",
-          "description": "Wire Roadmap90DaySection into the page and ensure navigation scrolls to it; optionally connect Success Criteria '90‑Day Roadmap Plan' tab action to scroll here."
-        }
-      ]
-    },
-    {
-      "id": "REQ-7",
-      "summary": "Include the two uploaded images in an optional Reference/Notes collapsible section or modal without asserting personal identity details.",
-      "acceptanceCriteria": [
-        "A collapsible panel or modal can display the uploaded images.",
-        "No text on the site identifies or asserts who is in the images; the images are presented as generic reference notes only."
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/public/assets/reference/uploaded-reference-1.png",
-          "operation": "create",
-          "description": "Add the first uploaded reference image as a static asset for optional viewing in the Reference/Notes section."
-        },
-        {
-          "path": "frontend/public/assets/reference/uploaded-reference-2.png",
-          "operation": "create",
-          "description": "Add the second uploaded reference image as a static asset for optional viewing in the Reference/Notes section."
-        },
-        {
-          "path": "frontend/src/components/ReferenceNotes.tsx",
-          "operation": "create",
-          "description": "Create a collapsible panel or modal that displays the two reference images with neutral framing text (e.g., “Reference notes”) and no identity claims. Use shadcn/ui Collapsible or Dialog components as appropriate. Verify the component's usage instructions before implementing."
-        },
-        {
-          "path": "frontend/src/App.tsx",
-          "operation": "modify",
-          "description": "Wire ReferenceNotes into the page near the end (or in the header/footer area) so it is optional and does not dominate the primary narrative."
-        }
-      ]
-    },
-    {
-      "id": "REQ-8",
-      "summary": "Establish a consistent executive-governance design system (typography, spacing, components) using a non blue+purple primary palette.",
-      "acceptanceCriteria": [
-        "Theme is consistent across hero, buttons/tabs, cards, and typography.",
-        "Color palette is not blue+purple as the primary combination (unless the user later requests it).",
-        "Design remains professional and readable (sufficient contrast; clear hierarchy)."
-      ],
-      "file_operations": [
         {
           "path": "frontend/src/index.css",
-          "operation": "create",
-          "description": "Add global styles and theme tokens (Tailwind base/components/utilities and CSS variables) to establish a warm-neutral, executive look (e.g., charcoal/stone + muted accent) and consistent typography/spacing across sections."
-        },
-        {
-          "path": "frontend/tailwind.config.js",
           "operation": "modify",
-          "description": "Adjust Tailwind theme extensions (if needed) to support the chosen non blue+purple primary palette and ensure consistent spacing/typography defaults across the app."
-        },
+          "description": "Add/adjust a small, reusable styling hook (e.g., a component-layer utility class) for Success Criteria tab interaction states if needed to ensure consistent hover/focus/selected behavior across light and dark themes, without modifying shadcn UI component source. Verify the component's usage instructions before implementing."
+        }
+      ]
+    },
+    {
+      "id": "REQ-21",
+      "summary": "Make Impact and 90-Day Plan controls render as two distinct buttons and ensure each scrolls only to its correct section target without label overlap at any viewport size.",
+      "acceptanceCriteria": [
+        "“Impact” and “90-Day Plan” render as two distinct tab/button elements with readable labels at all common viewport sizes (mobile through desktop).",
+        "Clicking/tapping “Impact” scrolls to the section with id=\"impact\" and does not scroll to the roadmap section.",
+        "Clicking/tapping “90-Day Plan” scrolls to the section with id=\"roadmap\" and does not scroll to the impact section.",
+        "No label text overlap/overwriting occurs between these two controls at any viewport size."
+      ],
+      "file_operations": [
         {
-          "path": "frontend/src/App.tsx",
+          "path": "frontend/src/components/sections/SuccessCriteriaModule.tsx",
           "operation": "modify",
-          "description": "Apply consistent layout patterns and reusable section styling so hero, tabs/buttons, cards, and headings share a coherent executive-governance visual language."
+          "description": "Adjust the Success Criteria module layout so “Impact” and “90-Day Plan” are clearly separated as two distinct controls (e.g., enforce spacing/gap, consistent min heights, and responsive wrapping so labels never overlap). Ensure onClick handlers remain correctly bound: Impact triggers scrollToSection('impact') only; 90-Day Plan triggers scrollToSection('roadmap') only. Verify the component's usage instructions before implementing."
         }
       ]
     }

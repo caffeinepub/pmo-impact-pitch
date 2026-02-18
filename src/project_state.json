@@ -1,11 +1,12 @@
 {
   "schemaVersion": "1.0.0",
-  "projectStateVersion": 3,
+  "projectStateVersion": 17,
   "summary": "New project",
   "architectural_notes": [],
-  "known_issues": [],
-  "isFixRequest": false,
-  "imageRequirements": "## Required Images\n- Abstract executive governance hero background with subtle grid/lines and warm neutral palette (hero-bg.dim_1920x1080.png)\n- Minimal line-icon set for the four success criteria (governance, data integrity, automation, lifecycle flow) in a cohesive style (success-icons.dim_512x512.png)",
+  "known_issues": [
+    "Success Criteria module/tab labels are overlapping/overwriting each other (layout issue)."
+  ],
+  "isFixRequest": true,
   "existing_features": [
     {
       "id": "feature-create-a-responsive-single-page-website-that-presents-the-candidate-s-interview-narrative-with-these-sections-1-executive-pitch-2-about-me-3-four-success-criteria-4-impact-before-vs-after-5-90-day-roadmap",
@@ -70,12 +71,158 @@
         "REQ-8"
       ],
       "version": 1
+    },
+    {
+      "id": "feature-remove-the-hero-section-interviewer-badge-label-text-that-says-tailored-for-sanjeev-martin-so-it-no-longer-appears-anywhere-in-the-ui",
+      "title": "Remove the hero-section interviewer badge/label text that says “Tailored for Sanjeev & Martin” so it no longer appears anywhere in the UI.",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-replace-the-site-s-orange-amber-accent-styling-with-a-more-professional-non-orange-accent-color-and-apply-it-consistently-wherever-orange-amber-gradients-borders-or-highlight-text-are-currently-used-e-g-hero-headline-gradient-primary-cta-button-gradient-stat-highlight-colors-and-any-similar-accents-across-sections",
+      "title": "Replace the site’s orange/amber accent styling with a more professional, non-orange accent color and apply it consistently wherever orange/amber gradients, borders, or highlight text are currently used (e.g., hero headline gradient, primary CTA button gradient, stat highlight colors, and any similar accents across sections).",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-improve-the-single-page-site-s-mobile-viewing-experience-across-all-sections-nav-hero-about-me-success-criteria-tabs-impact-roadmap-and-reference-notes-so-content-is-readable-well-spaced-and-touch-friendly-on-small-screens-without-horizontal-scrolling-or-layout-overflow",
+      "title": "Improve the single-page site’s mobile viewing experience across all sections (Nav, Hero, About Me, Success Criteria tabs, Impact, Roadmap, and Reference Notes) so content is readable, well-spaced, and touch-friendly on small screens without horizontal scrolling or layout overflow.",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-generate-a-new-professional-project-management-themed-wallpaper-image-for-the-homepage-hero-background-with-a-clean-corporate-aesthetic-e-g-subtle-gantt-chart-motifs-planning-boards-timelines-governance-dashboards-and-no-readable-text-or-logos",
+      "title": "Generate a new professional, project-management-themed wallpaper image for the homepage hero background, with a clean corporate aesthetic (e.g., subtle Gantt/chart motifs, planning boards, timelines, governance dashboards) and no readable text or logos.",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-heroexecutivepitch-section-to-use-the-newly-generated-pmo-wallpaper-as-its-background-image-and-ensure-the-existing-overlay-keeps-headline-cta-text-highly-readable-in-both-light-and-dark-modes",
+      "title": "Update the HeroExecutivePitch section to use the newly generated PMO wallpaper as its background image and ensure the existing overlay keeps headline/CTA text highly readable in both light and dark modes.",
+      "reqIds": [
+        "REQ-13"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-new-reviews-section-to-the-single-page-site-that-highlights-that-stakeholder-recommendations-are-available-and-provides-a-prominent-external-link-to-the-user-s-linkedin-recommendations-page-https-www-linkedin-com-in-bhikajisawant-details-recommendations-detailscreentabindex-0",
+      "title": "Add a new \"Reviews\" section to the single-page site that highlights that stakeholder recommendations are available and provides a prominent external link to the user’s LinkedIn Recommendations page (https://www.linkedin.com/in/bhikajisawant/details/recommendations/?detailScreenTabIndex=0).",
+      "reqIds": [
+        "REQ-14"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-reviews-navigation-entry-and-an-in-page-button-so-users-can-easily-reach-the-new-reviews-section-from-the-sticky-nav-and-from-the-hero-area",
+      "title": "Add a \"Reviews\" navigation entry and an in-page button so users can easily reach the new Reviews section from the sticky nav and from the hero area.",
+      "reqIds": [
+        "REQ-15"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-within-the-reviews-section-display-the-linkedin-recommendations-url-in-a-copyable-format-so-the-user-can-share-the-link-directly-with-stakeholders",
+      "title": "Within the Reviews section, display the LinkedIn Recommendations URL in a copyable format so the user can share the link directly with stakeholders.",
+      "reqIds": [
+        "REQ-16"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-remove-the-project-management-wallpaper-image-from-the-hero-executive-pitch-section-by-eliminating-the-hero-background-image-styling-and-ensuring-the-hero-uses-a-non-image-background-e-g-theme-background-gradient-while-preserving-readability-of-the-headline-pitch-text-and-cta-buttons-in-both-light-and-dark-modes",
+      "title": "Remove the project-management wallpaper image from the Hero (Executive Pitch) section by eliminating the hero background-image styling and ensuring the hero uses a non-image background (e.g., theme background/gradient) while preserving readability of the headline, pitch text, and CTA buttons in both light and dark modes.",
+      "reqIds": [
+        "REQ-17"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-remove-any-now-unused-generated-wallpaper-static-asset-s-from-the-frontend-public-assets-folder-and-any-code-references-so-the-wallpaper-is-not-shipped-with-the-build",
+      "title": "Remove any now-unused generated wallpaper static asset(s) from the frontend public assets folder and any code references so the wallpaper is not shipped with the build.",
+      "reqIds": [
+        "REQ-18"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-fix-the-success-criteria-module-tab-button-layout-so-the-labels-and-icons-do-not-overlap-overwrite-each-other-at-any-viewport-size-especially-mobile-including-the-four-criteria-tabs-plus-the-impact-and-90-day-plan-tabs",
+      "title": "Fix the Success Criteria module tab/button layout so the labels and icons do not overlap/overwrite each other at any viewport size (especially mobile), including the four criteria tabs plus the “Impact” and “90-Day Plan” tabs.",
+      "reqIds": [
+        "REQ-19"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-clear-hover-focus-and-selected-active-visual-states-for-all-tab-buttons-in-the-success-criteria-module-the-four-success-criteria-tabs-plus-the-impact-and-90-day-plan-buttons-so-users-can-visually-tell-what-is-interactive-what-is-hovered-and-what-is-selected",
+      "title": "Add clear hover, focus, and selected (active) visual states for all tab buttons in the Success Criteria module (the four success criteria tabs plus the “Impact” and “90-Day Plan” buttons), so users can visually tell what is interactive, what is hovered, and what is selected.",
+      "reqIds": [
+        "REQ-20"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-ensure-the-impact-and-90-day-plan-controls-in-the-success-criteria-module-are-clearly-separated-as-two-distinct-buttons-not-visually-merged-overwritten-and-that-each-triggers-only-its-respective-scroll-target-impact-scrolls-to-the-impact-section-90-day-plan-scrolls-to-the-roadmap-section",
+      "title": "Ensure the “Impact” and “90-Day Plan” controls in the Success Criteria module are clearly separated as two distinct buttons (not visually merged/overwritten) and that each triggers only its respective scroll target (Impact scrolls to the Impact section; 90-Day Plan scrolls to the Roadmap section).",
+      "reqIds": [
+        "REQ-21"
+      ],
+      "version": 1
     }
   ],
   "new_feature_requests": [
     {
       "id": "AR-1",
       "summary": "Create a website (purpose/content/pages not yet specified)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Update site theme by changing orange accent color to a more professional color",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Remove the hero label text \"Tailored for Sanjeev & Martin\"",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Improve mobile responsiveness / make the site mobile-friendly for viewing",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Add a \"Reviews\" button/section showing stakeholder recommendations/testimonials and link to the user's LinkedIn recommendations page",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "Remove the project-management-themed wallpaper/hero background from the site",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-8",
+      "summary": "Add hover/active/selected visual states (e.g., color change) for the Success Criteria/Impact/90-Day Plan tab buttons",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-9",
+      "summary": "Ensure the \"Impact\" and \"90-Day Plan\" tabs/buttons are clearly separated (not merged/overlapping) in the Success Criteria module",
       "reqIds": [],
       "status": "pending"
     }
